@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sehurtad <sehurtad@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/02 16:23:26 by sehurtad          #+#    #+#             */
+/*   Updated: 2026/07/02 16:23:26 by sehurtad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char *ft_strchr(char *str, int c)
+char	*ft_strchr(char *str, int c)
 {
-	int i;
+	int	i;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
@@ -14,21 +28,19 @@ char *ft_strchr(char *str, int c)
 	return (0);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char *str;
-	size_t i;
-	size_t c;
+	char	*str;
+	size_t	i;
+	size_t	c;
 
 	if (!s1)
 		s1 = "";
 	if (!s2)
 		s2 = "";
-
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
-
 	i = 0;
 	while (s1[i])
 	{
@@ -45,9 +57,9 @@ char *ft_strjoin(char *s1, char *s2)
 	return (str);
 }
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return (0);
